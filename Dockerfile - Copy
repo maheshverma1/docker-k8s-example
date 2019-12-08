@@ -1,0 +1,11 @@
+FROM hirokimatsumoto/alpine-openjdk-11
+
+COPY ./docker-k8s-example-0.0.1-SNAPSHOTnull.jar ./app.jar
+
+
+MAINTAINER  Author Name mahesh_avinash1@yahoo.com
+
+EXPOSE 8085
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
+

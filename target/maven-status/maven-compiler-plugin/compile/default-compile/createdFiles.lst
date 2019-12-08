@@ -1,0 +1,5 @@
+com\docker\k8s\dockerk8sexample\controller\APIInfoController.class
+com\docker\k8s\dockerk8sexample\DockerK8sExampleApplication$MixIn.class
+com\docker\k8s\dockerk8sexample\controller\FibonacciCalculator.class
+com\docker\k8s\dockerk8sexample\util\APIInfo.class
+com\docker\k8s\dockerk8sexample\DockerK8sExampleApplication.class
