@@ -1,8 +1,26 @@
-sudo: false
+sudo: required
+services:
+  - docker            // we want access to docker client
+env:                                                        // *** creating environment variables so that other scripts can access them
+  global:
+    - SHA=$(git rev-parse HEAD)                             // ***  this gives the commit id# (this is unique) of the last commit that
+                                                            //      was done.
+
 language: java
 jdk:
   - oraclejdk11
 
-script: mvn clean install
+before_install:   
+  # ********* Giving the docker client access to our Docker Hub account
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  
+  # ********* Building an image    -t : name of the image  Dockerfile to use
+ # - docker build -t maheshkumarctl/docker-k8s-example:"$SHA" .
 
+
+script:
+  - mvn clean install
+#  - docker run stephengrider/react-test npm test -- --coverage
+  - docker build -t maheshkumarctl/docker-k8s-example:"$SHA" .
+  - docker push maheshkumarctl/docker-k8s-example:"$SHA"
 
