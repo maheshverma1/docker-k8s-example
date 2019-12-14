@@ -1,4 +1,6 @@
 sudo: required
+services:
+  - docker            // we want access to docker client
 
 language: java
 jdk:
