@@ -12,14 +12,14 @@ jdk:
 
 before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t maheshkumarctl/docker-k8s-example:latest .
+  - docker build -t maheshkumarctl/docker-k8s-example:"$SHA" .
 
 
 
 script:
   - mvn clean install
-  - docker build -t maheshkumarctl/docker-k8s-example:latest .
-  - docker push maheshkumarctl/docker-k8s-example:latest
+  - docker build -t maheshkumarctl/docker-k8s-example:"$SHA" .
+  - docker push maheshkumarctl/docker-k8s-example:"$SHA"
 
 
 
