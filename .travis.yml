@@ -8,8 +8,3 @@ jdk:
 
 script:
   - mvn clean install
-//  - docker run stephengrider/react-test npm test -- --coverage
-//  - docker build -t maheshkumarctl/docker-k8s-example:"$SHA" .
-//  - docker push maheshkumarctl/docker-k8s-example:"$SHA"
-
-//echo "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
