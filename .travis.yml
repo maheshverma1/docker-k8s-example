@@ -2,6 +2,10 @@ sudo: required
 services:
   - docker            // we want access to docker client
 
+env:
+  global:
+    - SHA=$(git rev-parse HEAD)
+    
 language: java
 jdk:
   - oraclejdk11
