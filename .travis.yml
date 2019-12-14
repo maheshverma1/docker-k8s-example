@@ -18,7 +18,9 @@ before_install:
 script:
   - docker build -t maheshkumarctl/docker-k8s-example:"$SHA" .
   - docker push maheshkumarctl/docker-k8s-example:"$SHA"
-  - docker run maheshkumarctl/docker-k8s-example:"$SHA"
+  - docker run --publish 8095:8080 maheshkumarctl/docker-k8s-example:"$SHA"
+  - docker-machine ip
+
 
 
 
