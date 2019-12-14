@@ -11,11 +11,11 @@ jdk:
   - oraclejdk11
 
 before_install:   
-  # ********* Giving the docker client access to our Docker Hub account
+  // ********* Giving the docker client access to our Docker Hub account
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   
-  # ********* Building an image    -t : name of the image  Dockerfile to use
- # - docker build -t maheshkumarctl/docker-k8s-example:"$SHA" .
+  // ********* Building an image    -t : name of the image  Dockerfile to use
+ // - docker build -t maheshkumarctl/docker-k8s-example:"$SHA" .
 
 echo "$DOCKER_PASSWORD" "$DOCKER_USERNAME"
 echo "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
@@ -24,8 +24,8 @@ echo "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 script:
   - mvn clean install
-#  - docker run stephengrider/react-test npm test -- --coverage
-  - docker build -t maheshkumarctl/docker-k8s-example:"$SHA" .
-  - docker push maheshkumarctl/docker-k8s-example:"$SHA"
+//  - docker run stephengrider/react-test npm test -- --coverage
+//  - docker build -t maheshkumarctl/docker-k8s-example:"$SHA" .
+//  - docker push maheshkumarctl/docker-k8s-example:"$SHA"
 
 echo "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
