@@ -16,7 +16,7 @@ before_install:
 
 script:
   - docker build -t maheshkumarctl/docker-k8s-example:"$SHA" .
-  - docker push maheshkumarctl/docker-k8s-example:"$SHA"
+#  - docker push maheshkumarctl/docker-k8s-example:"$SHA"
 
 
 
