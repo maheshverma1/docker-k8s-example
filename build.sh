@@ -3,7 +3,7 @@
 
 docker build -t maheshkumarctl/docker-k8s-example:$(git rev-parse HEAD) .
 
-docker login -u maheshkumarctl -p mk@verma1
+echo "mk@verma1" | docker login -u "maheshkumarctl" --password-stdin
 
 docker push maheshkumarctl/docker-k8s-example:$(git rev-parse HEAD)
 
